@@ -1,0 +1,22 @@
+= Protokollierung des Netzwerktechnikprojekts
+Maximilian Slabschi, Isabel Schnalzenberger
+:toc:
+:icons: font
+:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+
+== 1. Tag (06.03.2023)
+=== Proxmox
+** Erstellen von Container
+
+** SSH-Verbindung ermöglichen
+*** User erstellen (add User)
+*** Passwort erstellen
+*** => Funktionelle SSH-Verbindung
+
+** Erstellen der Firewall
+*** https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29
+*** Ablauf nach Anleitung in obrigem Link
+*** Testen der Firewall
+*** Installieren nginx
+*** => Firewall Website blockieren lassen
+*** Wenn diese nicht erreicht werden kann funktioniert die Firewall
