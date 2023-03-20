@@ -6,7 +6,33 @@ Maximilian Slabschi, Isabel Schnalzenberger
 
 == 1. Tag (06.03.2023)
 === Proxmox
-** Erstellen von Container
+* Erstellen von Container
+. Allgemein
+** Knoten: pve01 oder pve02 oder pve03
+** CT ID: 7180
+** Hostname: <klasse>-<nachname>
+** Resourcepool: it......
+** Kennwort: .....
+. Template
+** Storage: local
+** Template: debian-11-standard_11.6-1_amd64.tar.zst
+. Disks
+** Storage: SSD-School
+** Disk Größe: 8
+. CPU
+** Kerne: 4
+.Speicher
+** Speicher: 512
+** Swap: 512
+. Netzwerk
+** Name: net0
+** Bridge: vmbr<klassennummer> // siehe nvm
+** IP-Adress: 10.9.7.97/24
+** Gateway: 10.9.7.254
+
+* SSH-Verbindung:
+
+
 
 ** SSH-Verbindung ermöglichen
 *** User erstellen (add User)
