@@ -20,3 +20,8 @@ Maximilian Slabschi, Isabel Schnalzenberger
 *** Installieren nginx
 *** => Firewall Website blockieren lassen
 *** Wenn diese nicht erreicht werden kann funktioniert die Firewall
+
+== 2. Tag (13.03.2023)
+=== Proxmox
+** überarbeitung des Proxmox servers
+** Firewall überarbeitung
