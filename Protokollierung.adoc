@@ -38,8 +38,8 @@ add User <name>
 *** Passwort erstellen
 *** => Funktionelle SSH-Verbindung
 
-** Erstellen der Firewall
-*** https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29
+== Erstellen einer Firewall
+*** Anleitung: https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29[Firewall erstellen]
 *** Ablauf nach Anleitung in obrigem Link
 *** Testen der Firewall
 *** Installieren nginx
@@ -103,3 +103,7 @@ TIP: Falls Fehler auftreten, hier nachsehen: https://blog.habitats.tech/howto-in
 * ......................
 
 TIP: Für weitere informationen: https://blog.habitats.tech/howto-install-pi-hole-in-proxmox-ve-possibly-the-best-ad-blocker-and-privacy-protector[link]
+
+== Webserver einrichten
+* ......................
+
