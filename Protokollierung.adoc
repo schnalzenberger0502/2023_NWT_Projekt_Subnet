@@ -100,10 +100,34 @@ pihole -a -p
 TIP: Falls Fehler auftreten, hier nachsehen: https://blog.habitats.tech/howto-install-pi-hole-in-proxmox-ve-possibly-the-best-ad-blocker-and-privacy-protector[link]
 
 == PiHole einrichten
-* ......................
+* In Ihrem Browser geben sie die Netzwerkadresse ihres Containers ein + /admin
+====
+z.B. http://10.10.10.10/admin
+====
+* Nun sind sie auf der Übersichtsseite
+* Im Router beim DNS einfach die Adresse des PiHole eingeben
+* Fertig nun läuft Ihr PiHole als Dns
 
 TIP: Für weitere informationen: https://blog.habitats.tech/howto-install-pi-hole-in-proxmox-ve-possibly-the-best-ad-blocker-and-privacy-protector[link]
 
-== Webserver einrichten
-* ......................
+== Webserver Erstellen
+* Geben sie (falls mit ssh verbunden) folgenden Befehl ein um als Root agieren zu können
+----
+su -
+----
 
+* Zuerst bringen sie Ihre Virtuelle Maschine auf den neuesten Stand und anschließend mit folgenden Befehl installieren sie ihren Webserver
+----
+apt update
+
+apt install apache2
+
+chrown -R me/var/www/html/
+----
+
+* Um eine HTML Datei zu erstellen Verwenden geben sie folgenden Befehl ein
+----
+nano /var/www/html/index.html
+----
+
+* Fertig nun haben sie ihren eigenen Webserver mit der Netzwerkadresse Ihres Containers + dem Namen der Html datei können sie ihre website sehen
