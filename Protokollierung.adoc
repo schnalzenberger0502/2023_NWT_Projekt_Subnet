@@ -4,8 +4,7 @@ Maximilian Slabschi, Isabel Schnalzenberger
 :icons: font
 :url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
 
-== 1. Tag (06.03.2023)
-=== Proxmox
+== Container erstellen
 * Erstellen von Container
 . Allgemein
 ** Knoten: pve01 oder pve02 oder pve03
@@ -31,11 +30,11 @@ Maximilian Slabschi, Isabel Schnalzenberger
 ** Gateway: 10.9.7.254
 
 * SSH-Verbindung:
-
-
-
 ** SSH-Verbindung ermöglichen
-*** User erstellen (add User)
+*** User erstellen
+----
+add User <name>
+----
 *** Passwort erstellen
 *** => Funktionelle SSH-Verbindung
 
@@ -47,7 +46,60 @@ Maximilian Slabschi, Isabel Schnalzenberger
 *** => Firewall Website blockieren lassen
 *** Wenn diese nicht erreicht werden kann funktioniert die Firewall
 
-== 2. Tag (13.03.2023)
-=== Proxmox
-** überarbeitung des Proxmox servers
-** Firewall überarbeitung
+== PiHole installieren
+* Zuerst erstellen sie einen Container
+* Im PiHole zu installieren geben Sie zuerst folgende Befehle ein:
+----
+apt update
+
+apt full-upgrade
+----
+
+* Geben sie die darunter folgenden Befehle ein.
+* Gibt eine Liste mit Zeitzonen aus, auf welcher sie ihre auswählen
+----
+timedatectl list-timezones
+----
+
+* ihre Zeitzone einsetzen z.B. `set-timezone Europe/Berlin`
+----
+set-timezone <timezone>
+----
+
+* Bestätigung des ganzen
+----
+timedatectl
+----
+
+* Mit reboot den Container neustarten
+----
+reboot
+----
+
+* Nun "curl" installieren und PiHole installieren
+----
+apt install curl
+
+curl -sSL https://install.pi-hole.net | bash
+----
+
+* Danach folge eine Anreihung von Aktionen
+* Wenn man nichts auswählen kann einfach "Confirm" oder "Ok" mit Enter und den Pfeiltasten auswählen
+* Bei folgende Dinge auswählen
+
+image::images/PiHole1.jpg[]
+image::images/PiHole2.jpg[]
+image::images/PiHole3.jpg[]
+
+* Wenn die letzten Sachen geladen haben geben ändern sie das Passwort mit:
+----
+pihole -a -p
+----
+* Damit ist die Installation geschafft.
+
+TIP: Falls Fehler auftreten, hier nachsehen: https://blog.habitats.tech/howto-install-pi-hole-in-proxmox-ve-possibly-the-best-ad-blocker-and-privacy-protector[link]
+
+== PiHole einrichten
+* ......................
+
+TIP: Für weitere informationen: https://blog.habitats.tech/howto-install-pi-hole-in-proxmox-ve-possibly-the-best-ad-blocker-and-privacy-protector[link]
