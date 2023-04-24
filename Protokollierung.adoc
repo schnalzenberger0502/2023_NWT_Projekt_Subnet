@@ -38,14 +38,6 @@ add User <name>
 *** Passwort erstellen
 *** => Funktionelle SSH-Verbindung
 
-== Erstellen einer Firewall
-*** Anleitung: https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29[Firewall erstellen]
-*** Ablauf nach Anleitung in obrigem Link
-*** Testen der Firewall
-*** Installieren nginx
-*** => Firewall Website blockieren lassen
-*** Wenn diese nicht erreicht werden kann funktioniert die Firewall
-
 == PiHole installieren
 * Zuerst erstellen sie einen Container
 * Im PiHole zu installieren geben Sie zuerst folgende Befehle ein:
@@ -131,3 +123,14 @@ nano /var/www/html/index.html
 ----
 
 * Fertig nun haben sie ihren eigenen Webserver mit der Netzwerkadresse Ihres Containers + dem Namen der Html datei können sie ihre website sehen
+
+== Router
+* Container erstellen
+* net0
+** IP-Adresse: <IP-Adresse>
+* Netzwerkkarte hinzufügen
+* net1
+** Ip-Addresse: <Gluenetzaddresse>
+** Gateway: 10.9.7.254
+
+* Gateway bei den anderen Maschninen auf die Adresse des Routers ändern
