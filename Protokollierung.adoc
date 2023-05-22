@@ -4,7 +4,8 @@ Maximilian Slabschi, Isabel Schnalzenberger
 :icons: font
 :url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
 
-== Container erstellen
+== Basic Infos
+=== Container erstellen
 * Erstellen von Container
 . Allgemein
 ** Knoten: pve01 oder pve02 oder pve03
@@ -33,12 +34,13 @@ Maximilian Slabschi, Isabel Schnalzenberger
 ** SSH-Verbindung ermöglichen
 *** User erstellen
 ----
-add User <name>
+add user <name>
 ----
 *** Passwort erstellen
 *** => Funktionelle SSH-Verbindung
 
-== PiHole installieren
+== PiHole
+=== PiHole installieren
 * Zuerst erstellen sie einen Container
 * Im PiHole zu installieren geben Sie zuerst folgende Befehle ein:
 ----
@@ -91,7 +93,7 @@ pihole -a -p
 
 TIP: Falls Fehler auftreten, hier nachsehen: https://blog.habitats.tech/howto-install-pi-hole-in-proxmox-ve-possibly-the-best-ad-blocker-and-privacy-protector[link]
 
-== PiHole einrichten
+=== PiHole einrichten (falls erwünscht)
 * In Ihrem Browser geben sie die Netzwerkadresse ihres Containers ein + /admin
 ====
 z.B. http://10.10.10.10/admin
@@ -102,7 +104,8 @@ z.B. http://10.10.10.10/admin
 
 TIP: Für weitere informationen: https://blog.habitats.tech/howto-install-pi-hole-in-proxmox-ve-possibly-the-best-ad-blocker-and-privacy-protector[link]
 
-== Webserver Erstellen
+== Webserver
+=== Webserver Erstellen
 * Geben sie (falls mit ssh verbunden) folgenden Befehl ein um als Root agieren zu können
 ----
 su -
@@ -125,6 +128,7 @@ nano /var/www/html/index.html
 * Fertig nun haben sie ihren eigenen Webserver mit der Netzwerkadresse Ihres Containers + dem Namen der Html datei können sie ihre website sehen
 
 == Router
+=== Router erstellen
 * Container erstellen
 * net0
 ** IP-Adresse: <IP-Adresse>
@@ -171,3 +175,19 @@ sudo /etc/init.d/procps restart
 ----
 
 * Nun sollte das Gluenetz funktionieren
+
+== VM Desktop
+* Create VM
+** ISO-Image: lubuntu-22.10-desktop-amd64.iso
+** Ansonsten alle Einstellungen wie gehabt
+
+* VM Starten
+** Am Desktop auf `Preferences` und dann auf `Advanced Network Configuration gehen`
+
+TIP: Falls Wireless connection ist einfach per click auf das `-` löschen
+
+** Dann auf `+` und _Ethernet_ auswählen
+*** Darin Navigieren zu `IPv4` und dort von _automatic_ auf _manuel_ einstellen und auf `add` clicken
+*** Dann die IP, Subnet, und DNS (ADBlocker) eintragen und nun sollte die internetverbindung stehen
+
+NOTE: zum testen könnt ihr einfach auf eine beliebige Website gehen
