@@ -30,14 +30,22 @@ Maximilian Slabschi, Isabel Schnalzenberger
 ** IP-Adress: 10.9.7.97/24
 ** Gateway: 10.9.7.254
 
-* SSH-Verbindung:
-** SSH-Verbindung ermöglichen
-*** User erstellen
+=== Container/VM starten
+* Einfach einen der Container/VM's auswählen
+* In dessen Menü einfach auf Start clicken um diesen zu starten
+
+=== SSH-Verbindung:
+* SSH-Verbindung ermöglichen
+** User erstellen
 ----
 add user <name>
 ----
-*** Passwort erstellen
-*** => Funktionelle SSH-Verbindung
+** Passwort erstellen
+* Im eigenen Terminal dann eingeben
+----
+ssh <user>@<ip-container>
+----
+* Nun können sie von ihrer eigenen shell auf den Container/VM zugreifen
 
 == PiHole
 === PiHole installieren
@@ -133,7 +141,7 @@ nano /var/www/html/index.html
 * net0
 ** IP-Adresse: <IP-Adresse>
 
-=== Netzwerkkarte hinzufügen
+==== Netzwerkkarte hinzufügen
 * net1
 ** Ip-Addresse: <Gluenetzaddresse>
 ** Gateway: 10.9.7.254
@@ -191,3 +199,6 @@ TIP: Falls Wireless connection ist einfach per click auf das `-` löschen
 *** Dann die IP, Subnet, und DNS (ADBlocker) eintragen und nun sollte die internetverbindung stehen
 
 NOTE: zum testen könnt ihr einfach auf eine beliebige Website gehen
+
+== Netzwerkplan
+image::images/Netzwerkplan.jpg[]
