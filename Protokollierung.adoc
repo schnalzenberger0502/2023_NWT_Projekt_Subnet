@@ -202,3 +202,57 @@ NOTE: zum testen könnt ihr einfach auf eine beliebige Website gehen
 
 == Netzwerkplan
 image::images/Netzwerkplan.jpg[]
+
+
+== Proxyserver
+* Original: https://phoenixnap.com/kb/setup-install-squid-proxy-server-ubuntu
+
+NOTE: Falls man schon mit dem Root-User arbeitet, braucht man nicht immer sudo einzugeben
+
+=== Updating:
+----
+sudo apt-get update
+----
+
+=== Installing:
+----
+sudo apt-get install squid
+----
+Das System sollte zur Bestätigung auffordern – geben Sie „Y“ ein und warten Sie, bis der Vorgang abgeschlossen ist.
+
+=== Konfigurieren:
+* Squid-Konfigurationsdatei:
+----
+sudo nano /etc/squid/squid.conf
+----
+Wenn Sie nicht wollen, das der Port auf 3218 (default) läuft, navigieren Sie zu http_port und ändern Sie dies.
+
+* Entsperren Sie den gesamten HTTP-Verkehr
+----
+http_access allow all
+----
+Um dies zu finden müssen Sie zu:
+----
+http_access deny all
+----
+navigieren.
+
+* Starten Sie den Squid-Dienst neu:
+----
+sudo systemctl restart squid
+----
+
+=== Fügen Sie Squid ACL hinzu
+
+Erstellen Sie eine Zugriffskontrollliste, indem Sie die Datei „squid.conf“ erneut bearbeiten, wie unter Konfigurieren das erste Kommando.
+
+* Neue Zeile:
+----
+acl localnet src 10.9.7.98/28
+----
+Anzugebene IP-Adresse ist der Webserver oder ein Computer
+
+* Öffnen der Ports
+----
+acl Safe_ports port 3030
+----
